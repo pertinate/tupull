@@ -1,22 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
 import Head from 'next/head';
-import Button from '../components/Button';
 import { useAppContext } from "../components/Contexts/AppContext";
+import Button from "../components/Button";
+import PollCreation from "../components/PollCreation";
 
 export default function Home() {
     const states = useAppContext();
     return (
         <div>
             <Head>
-                <title>My NEXT.JS App</title>
+                <title>Tupoll</title>
             </Head>
             <main
-                className='bg-gray-200 h-screen'
+                className='bg-gray-900 h-screen flex flex-col justify-center items-center'
             >
-                {states.counter}
-                <Button
-                    onClick={() => states.increaseCounter()}
-                >testtttttttttt</Button>
+                <div
+                    className='w-96 m-4 bg-gray-700 shadow-md flex flex-col justify-center'
+                >
+                    <PollCreation />
+                    <Button>
+                        Create Poll
+                    </Button>
+                </div>
             </main>
         </div>
     );

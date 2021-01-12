@@ -1,7 +1,7 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
 
 interface Props {
-    children: React.ReactNode;
+    children?: React.ReactNode;
 }
 
 export const appContext = createContext({
